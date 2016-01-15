@@ -1,25 +1,35 @@
 <div class="container">
   <h2>My todos</h2>
 
+  <!-- Todos list -->
+  <div ui-sortable ng-model="todos">
+    <div ng-repeat="todo in todos">
+      <div class="card">
+        <div class="card-header">
+          <h3 ng-bind="todo.title"></h3>
+          <span class="input-group-btn pull-right">
+            <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+          </span>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title"><span ng-bind="todo.description"></span></h4>
+          <p class="card-text">Priority : <span ng-bind="todo.priority"></span></p>
+        </div>
+    </div>
+  </div>
+
   <!-- Todos input -->
   <form role="form" ng-submit="addTodo()">
     <div class="row">
+      <div>Add a TODO :</div>
       <div class="input-group">
-        <input type="text" ng-model="todo" placeholder="What needs to be done?" class="form-control">
+        <input type="text" ng-model="title" placeholder="What needs to be done?" class="form-control">
+        <input type="text" ng-model="description" placeholder="Details.." class="form-control">
+        <input type="text" ng-model="priority" placeholder="What is the priority?" class="form-control">
         <span class="input-group-btn">
           <input type="submit" class="btn btn-primary" value="Add">
         </span>
       </div>
     </div>
   </form>
-
-    <!-- Todos list -->
-  <div ui-sortable ng-model="todos">
-    <p class="input-group" ng-repeat="todo in todos" style="padding:5px 10px; cursor: move;">
-      <input type="text" ng-model="todo" class="form-control">
-      <span class="input-group-btn">
-        <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
-      </span>
-    </p>
-  </div>
 </div>
