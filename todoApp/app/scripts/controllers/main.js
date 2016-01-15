@@ -31,7 +31,7 @@ angular.module('todoAppApp')
       $scope.todos.push(todo);
       $scope.title = '';
       $scope.description = '';
-      $scope.priority = '';
+      $scope.priority = ''; 
     };
     $scope.removeTodo = function (index) {
       $scope.todos.splice(index, 1);
