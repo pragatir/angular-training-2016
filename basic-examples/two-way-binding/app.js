@@ -12,4 +12,9 @@
 			$scope.num = 3;
 		}
 	});
+
+	// Directive Normalization
+	/*app.controller('Controller', ['$scope', function($scope) {
+	  $scope.name = 'John Doe';
+	}]);*/
 } ());

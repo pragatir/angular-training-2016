@@ -2,17 +2,47 @@
 	<head>
 		<title>Two Way Binding</title>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<style>
+		.form-container{
+			width: 530px;
+			margin: 200px auto;
+		}
+		.form-actions{
+			margin-top: 20px;
+		}
+		</style>
 	</head>
 	<body ng-app="twoWayBinding">
 		<div ng-controller="myFirstCtrl" class="container">
-			<div class="row">
-				Twice of <input type="text" ng-model="num" /> is {{num * 2}}
-			</div>
-			<div class="row">
-				<button ng-click="changeValue()" type="button" class="btn btn-primary">Change Value</button>
- 				<button  ng-click="putValueBack()" type="button" class="btn btn-primary">Put it back!</button> 
+			<div class="form-container">
+				<div class="card card-block">
+					<div class="form-group">
+
+						<h4>
+							<span class="">
+								Twice of <input type="text" data-ng-model="num" /> is {{num * 2}}
+							</span>
+						</h4>
+
+					</div>
+
+					<div class="form-actions">
+						<button ng-click="changeValue()" type="button" class="btn btn-primary">Change Value</button>
+		 				<button  ng-click="putValueBack()" type="button" class="btn btn-primary">Put it back!</button> 
+					</div>
+					
+				</div>
+				<!-- <div ng-controller="Controller">
+				  Hello <input ng-model='name'> <hr/>
+				  <span ng-bind="name"></span> <br/>
+				  <span ng:bind="name"></span> <br/>
+				  <span ng_bind="name"></span> <br/>
+				  <span data-ng-bind="name"></span> <br/>
+				  <span x-ng-bind="name"></span> <br/>
+				</div> -->
 			</div>
 		</div>
+
 		<!-- External files required -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>

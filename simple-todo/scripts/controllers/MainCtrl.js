@@ -8,12 +8,12 @@
  * Main Controller of the todoApp
  */
 angular.module('todoApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', ["$scope", function ($scope) {
 
     //Array of TODOs
     $scope.todos = [{
       "title" : "Get Susan a birthday gift",
-      "description" : "Has a birthday on 20th of this month. She likes flowers.",
+      "description" : "Has her birthday on 20th of this month. She likes flowers.",
       "priority" : "High"
     }, {
       "title" : "Call hotel to check on rooms",
@@ -42,4 +42,4 @@ angular.module('todoApp')
     $scope.removeTodo = function (index) {
       $scope.todos.splice(index, 1);
     };
-  });
+  }]);

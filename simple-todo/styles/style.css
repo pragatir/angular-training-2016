@@ -106,3 +106,7 @@ body {
 .card-title {
     margin-bottom: .75rem;
 }
+.jumbotron .btn{
+  padding: 5px;
+  font-size: 21px !important;
+}
