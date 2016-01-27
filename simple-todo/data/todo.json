@@ -1,0 +1,16 @@
+[{
+  "title": "Get Susan a birthday gift",
+  "description": "Has her birthday on 20th of this month. She likes flowers.",
+  "priority": "High",
+  "completed": true
+}, {
+  "title": "Call hotel to check on rooms",
+  "description": "Need 2 double occupancy rooms",
+  "priority": "Medium",
+  "completed": false
+}, {
+  "title": "Send invoice to Carl for Phase 2",
+  "description": "Carl email : carl@company.com",
+  "priority": "Low",
+  "completed": false
+}]
