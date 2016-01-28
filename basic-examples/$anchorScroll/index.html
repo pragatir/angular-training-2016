@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>$anchorScroll Sample</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="../lib/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body ng-app="anchorScrollSample">
+    <div class="jumbotron" ng-controller="anchorScrollCtrl" style="background-color:white;">
+        <!-- Add values to the cache using this form -->
+        <div class="container">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="button-group">
+                    <input type="button" class="btn btn-sm btn-primary-outline" value="Go to card Three"/>
+                    <input type="button" class="btn btn-sm btn-primary-outline" value="Go to current anchor" />
+                </div>
+                <div class="card-columns" style="margin-top:10px;">
+                    <div class="card" id="1">
+                        <div class="card-header">
+                            <span class="label label-success">Card One</span>
+                        </div>
+                        <div class="card-block">
+                            <h3 class="card-title">Title Card One</h3>
+                            <p class="card-text">Description</p>
+                        </div>
+                    </div>
+                    <div class="card" id="2">
+                        <div class="card-header">
+                            <span class="label label-success">Card Two</span>
+                        </div>
+                        <div class="card-block">
+                            <h3 class="card-title">Title Card Two</h3>
+                            <p class="card-text">Description</p>
+                        </div>
+                    </div>
+                    <div class="card" id="3">
+                        <div class="card-header">
+                            <span class="label label-success">Card Three</span>
+                        </div>
+                        <div class="card-block">
+                            <h3 class="card-title">Title Card Three</h3>
+                            <p class="card-text">Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../lib/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
