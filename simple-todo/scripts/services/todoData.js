@@ -4,7 +4,7 @@ angular.module("todoApp")
       "title" : "Get Susan a birthday gift",
       "description" : "Has her birthday on 20th of this month. She likes flowers.",
       "priority" : "High",
-      "completed" : true
+      "completed" : false
     }, {
       "title" : "Call hotel to check on rooms",
       "description" : "Need 2 double occupancy rooms",

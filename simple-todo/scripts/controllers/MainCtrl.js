@@ -8,24 +8,9 @@
  * Main Controller of the todoApp
  */
 angular.module('todoApp')
-  //.controller('MainCtrl', ["$scope", "todoSvc", function ($scope, todoSvc) {
-  .controller('MainCtrl', ["$scope", function ($scope) {
+  .controller('MainCtrl', ["$scope", "todoSvc", function ($scope, todoSvc) {
 
-    //Array of TODOs
-    $scope.todos = [{
-      "title" : "Get Susan a birthday gift",
-      "description" : "Has her birthday on 20th of this month. She likes flowers.",
-      "priority" : "High"
-    }, {
-      "title" : "Call hotel to check on rooms",
-      "description" : "Need 2 double occupancy rooms",
-      "priority" : "Medium"
-    }, {
-      "title" : "Send invoice to Carl for Phase 2",
-      "description" : "Carl email : carl@company.com",
-      "priority" : "Low"
-    }];
-    //$scope.todos = todoSvc.todos;
+    $scope.todos = todoSvc.todos;
 
     //Function to add a TODO
     $scope.addTodo = function () {
@@ -34,35 +19,28 @@ angular.module('todoApp')
         "description" : $scope.description,
         "priority" : $scope.priority
       }
-      $scope.todos.push(todo);
-      $scope.title = '';
-      $scope.description = '';
-      $scope.priority = '';
-
-      /*todoSvc.addTodo(todo);
-      $scope.loadTodos();*/
+      todoSvc.addTodo(todo);
+      $scope.loadTodos();
     };
 
-    /*$scope.loadTodos = function () {
+    $scope.loadTodos = function () {
       $scope.title = '';
       $scope.description = '';
       $scope.priority = '';
       todoSvc.getTodos();
       //$location.hash("todo-list");
       //$anchorScroll();
-    }*/
+    }
 
     //Function to remove a TODO
     $scope.removeTodo = function (index) {
-      $scope.todos.splice(index, 1);
-      //todoSvc.removeTodo(index);
+      todoSvc.removeTodo(index);
     };
 
     //Function to complete a TODO
     $scope.completeTodo = function (index) {
-      $scope.todos[index].completed = true;
-      //todoSvc.completeTodo(index);
+      todoSvc.completeTodo(index);
     }
 
-    //$scope.loadTodos();
+    $scope.loadTodos();
   }]);
