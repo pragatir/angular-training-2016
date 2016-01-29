@@ -7,45 +7,40 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link href="../lib/bootstrap.css" rel="stylesheet" type="text/css" />
+    <style>
+    .my-container{
+        height: 240px;
+        width: 440px;
+        background-color: white;
+        margin: 20px 20px 0 20px;s
+    }
+    </style>
 </head>
 
 <body ng-app="anchorScrollSample">
-    <div class="jumbotron" ng-controller="anchorScrollCtrl" style="background-color:white;">
+    <div class="jumbotron" ng-controller="anchorScrollCtrl" style="background-color:#BDBDBD;">
         <!-- Add values to the cache using this form -->
         <div class="container">
-            <div class="col-sm-12 col-md-12 col-lg-12">
+            <div>
                 <div class="button-group">
-                    <input type="button" class="btn btn-sm btn-primary-outline" value="Go to card Three"/>
+                    <input type="button" class="btn btn-sm btn-primary-outline" value="Go to card Three" ng-click="jumpToContainer3()"/>
+                    <inout type="text" class="form-control" ng-model="locationvalue" />
                     <input type="button" class="btn btn-sm btn-primary-outline" value="Go to current anchor" />
                 </div>
-                <div class="card-columns" style="margin-top:10px;">
-                    <div class="card" id="1">
-                        <div class="card-header">
-                            <span class="label label-success">Card One</span>
-                        </div>
-                        <div class="card-block">
-                            <h3 class="card-title">Title Card One</h3>
-                            <p class="card-text">Description</p>
-                        </div>
-                    </div>
-                    <div class="card" id="2">
-                        <div class="card-header">
-                            <span class="label label-success">Card Two</span>
-                        </div>
-                        <div class="card-block">
-                            <h3 class="card-title">Title Card Two</h3>
-                            <p class="card-text">Description</p>
-                        </div>
-                    </div>
-                    <div class="card" id="3">
-                        <div class="card-header">
-                            <span class="label label-success">Card Three</span>
-                        </div>
-                        <div class="card-block">
-                            <h3 class="card-title">Title Card Three</h3>
-                            <p class="card-text">Description</p>
-                        </div>
-                    </div>
+                <div class="my-container" id="one">
+                    <h3>My Container One</h3>
+                </div>
+                <div class="my-container" id="two">
+                    <h3>My Container Two</h3>
+                </div>
+                <div class="my-container" id="three">
+                    <h3>My Container Three</h3>
+                </div>
+                <div class="my-container" id="four">
+                    <h3>My Container Four</h3>
+                </div>
+                <div class="my-container" id="five">
+                    <h3>My Container Five</h3>
                 </div>
             </div>
         </div>
