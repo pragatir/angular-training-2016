@@ -6,15 +6,15 @@
 	// Parent-Child scope relation in Controller
 	var ParentCtrlFunction = function ($scope, $log) {
 		$scope.title = "ng Basics!";
-		/*$scope.book = {
-			title : "ng Basics!"
-		}*/
+		//$scope.book = {
+		//	title : "ng Basics!"
+		//}
 	};
 
 	var ChildCtrlFunction = function ($scope) {
-		/*$scope.book = {
-			title : "ng Advanced Concepts!"
-		}*/
+		// $scope.book = {
+		// 	title : "ng Advanced Concepts!"
+		// }
 	};
 
 	app.controller("ParentCtrl", ["$scope", "$log", ParentCtrlFunction]);
@@ -53,7 +53,7 @@
 		setTimeout(function () {
 			$scope.book.title = "ng Advanced I";
 			$scope.$apply();
-		}, 2000);		
+		}, 3000);		
 	}
 	var digestSampleTwoCtrl = function ($scope) {
 		$scope.book = {
@@ -61,7 +61,7 @@
 		}
 		setTimeout(function () {
 			$scope.book.title = "ng Advanced II";			
-		}, 3000);		
+		}, 2000);		
 	}
 	app.controller("digestSampleOneCtrl", ["$scope", digestSampleOneCtrl]);
 	app.controller("digestSampleTwoCtrl", ["$scope", digestSampleTwoCtrl]);*/
