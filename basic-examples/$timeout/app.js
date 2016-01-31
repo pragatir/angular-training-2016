@@ -3,7 +3,7 @@
 
 	app.controller("LocaleCtrl", ["$scope", "$timeout", function ($scope, $timeout) {
 		setTimeout(function () {
-			$scope.name = "Jane Doe";
+			$scope.name = "Jane Doe";			
 		}, 3000);
 
 		/*var promise = $timeout(function () {

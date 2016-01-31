@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Scopes Example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="../lib/bootstrap.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body ng-app="scopeApp">
+
+  	<div>
+  		<div class="jumbotron" style="background-color: #D8D8D8">
+	  		<!-- Parent-Child scope relation in Controller -->		   
+		    <div ng-controller="ParentCtrl">
+		    	<h3>{{title}}</h3>
+			    <h3>Parent Field : <input type="text" ng-model="title" /></h3>
+			    <div ng-controller="ChildCtrl">
+			    	<h3>Child Field : <input type="text" ng-model="title" /></h3>
+			    </div> 
+			</div>
+
+			<!-- Parent-Child scope relation in Directive -->
+  			<!-- 
+  			<div ng-controller="scopeCtrl">
+	  			<h3>{{title}}</h3>
+		  		<div ng-switch="show">
+		  			<h3>Input Inside switch : <input type="text" ng-switch-when="true" ng-model="title" /> </h3>
+		  		</div>
+	  			<h3>Input Outside switch : <input type="text" ng-model="title" /> </h3> 
+	  		</div>-->
+
+	  		<!-- Custom $watch example -->
+	  		<!-- <div ng-controller="watchSampleCtrl">
+	  			<h3><input type="text" ng-model="book.title" /></h3>
+	  		</div> -->
+
+	  		<!-- Digest Cycle Sample -->
+  			<!-- <div ng-controller="digestSampleOneCtrl">
+	  			<h3><input type="text" ng-model="book.title" />
+	  			{{watchText1}}</h3>
+	  		</div>
+	  		<div ng-controller="digestSampleTwoCtrl">
+	  			<h3><input type="text" ng-model="book.title" />
+	  			{{watchText2}}</h3>
+	  		</div> -->
+	  	</div>
+  	</div>
+
+    <script type="text/javascript" src="../lib/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
