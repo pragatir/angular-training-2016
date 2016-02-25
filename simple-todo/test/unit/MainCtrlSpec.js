@@ -1,33 +1,40 @@
 'use strict';
 
-describe('MainCtrl', function () {
-	var $rootScope, scope, $controller, mockTodoSvc;
+describe("Controllers", function () {
+	describe('MainCtrl', function () {
+		var $rootScope, 
+			scope, 
+			$controller, 
+			mockTodoSvc;
 
-  beforeEach(module('todoApp'));
- 
-  beforeEach(inject(function(_$rootScope_, _$controller_){
-    $rootScope = _$rootScope_;
-    scope = $rootScope.$new();
-    $controller = _$controller_;
-    mockTodoSvc = sinon.stub({getTodos: function () {}, removeTodo: function (index) {},
-    								completeTodo: function (index) {}
-  								});
-    $controller('MainCtrl', {'$scope': scope, todoSvc: mockTodoSvc});
-  }));
+	  	beforeEach(module('todoApp'));
+	 
+	  	beforeEach(inject(function(_$rootScope_, _$controller_){
+	    	$rootScope = _$rootScope_;
+	    	scope = $rootScope.$new();
+	    	$controller = _$controller_;
+	    	mockTodoSvc = sinon.stub({
+	    		getTodos: function () {}, 
+	    		removeTodo: function (index) {},
+	    		completeTodo: function (index) {},
+	    		addTodo: function(todo) {}
+	  		});
+	    	$controller('MainCtrl', {'$scope': scope, todoSvc: mockTodoSvc});
+	    	spyOn(scope, "resetForm").and.callThrough();
+	  	}));
 
-	it('should have a loadTodos function', function () {
-		expect(scope.loadTodos).toBeDefined();
-	});
+		it('should have a loadTodos function', function () {
+			expect(scope.loadTodos).toBeDefined();
+		});
 
-	it('should call removeTodo from todoSvc with same parameter passed to removeTodo on scope', function () {
-		var index = 2;
-		scope.removeTodo(index);
-		expect(mockTodoSvc.removeTodo.calledWith(index)).toBe(true);
-	});
+		/*it('should have a addTodo function', function () {
+			expect(scope.addTodo).toBeDefined();
+		});*/
 
-	it("should call completeTodo from todoSvc with same parameter passed to completeTodo on scope", function () {
-		var index = 2;
-		scope.completeTodo(index);
-		expect(mockTodoSvc.completeTodo.calledWith(index)).toBe(true);
+		it("should reset the form after adding a todo", function () {
+			scope.addTodo();
+			mockTodoSvc.addTodo({});
+			expect(scope.resetForm).toHaveBeenCalled();
+		});
 	});
 });

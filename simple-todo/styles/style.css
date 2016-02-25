@@ -110,3 +110,15 @@ body {
   padding: 5px;
   font-size: 21px !important;
 }
+.label-High {
+  font-weight : 400px !important;
+  color : red !important;
+}
+.label-Medium {
+  font-weight : 400px !important;
+  color : orange !important;
+}
+.label-Low {
+  font-weight : 400px !important;
+  color : green !important;
+}
